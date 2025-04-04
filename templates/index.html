@@ -8,11 +8,13 @@
 </head>
 
 <body>
-  <h1>ToDoアプリ</h1>
+  <header class="header">
+    <h1>ToDoアプリ</h1>
+  </header>
 
   <!-- 新しいToDoの登録 -->
   <form action="{{ url_for('create_todo') }}" method="POST" class="todo-form">
-    <input type="text" name="description" placeholder="新しいToDoを入力" required>
+    <input type="text" name="description" placeholder="新しいToDoを入力" class="todo-input" required>
     <button type="submit" class="button">登録</button>
   </form>
 
@@ -20,12 +22,12 @@
   <p class="list-todo">ToDoリスト</p>
   {% for todo in todos %}
     {% if todo[2] == false %}
-    <form method="" class="list-form">
+    <form method="POST" class="list-form">
       <p>{{ todo[1] }}</p>
       <input type="hidden" name="todo_id" value="{{ todo[0] }}">
       <div>
-        <button type="submit" formaction="" class="button">完了</button>
-        <button type="submit" formaction="" class="delete-button">削除</button>
+        <button type="submit" formaction="{{ url_for('delete_todo')}}" class="button">完了</button>
+        <button type="submit" formaction="{{ url_for('delete_todo')}}" class="delete-button">削除</button>
       </div>
     </form>
     {% endif %}
