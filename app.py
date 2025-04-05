@@ -27,13 +27,17 @@ def create_todo():
 @app.route('/update_todo', methods=['POST'])
 def update_todo():
     # 関数の処理をここに書く
+
+
     return redirect(url_for('show_todos'))
 
 # ToDoの削除
 @app.route('/delete_todo', methods=['POST'])
 def delete_todo():
     # 関数の処理をここに書く
+
+
     return redirect(url_for('show_todos'))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='127.0.0.1', port=8080, debug=True)

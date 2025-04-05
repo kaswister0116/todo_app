@@ -4,7 +4,7 @@ from psycopg2 import errors
 # DBへの接続を開始する
 def connect_db():
     username = os.getenv("USER")
-    password = os.getenv("PGPASSWORD") #or "あなたのパスワード"  
+    password = os.getenv("PGPASSWORD") #or "あなたのパスワード"
     try:
         connection = psycopg2.connect(
             dbname="todo_app",
@@ -38,6 +38,7 @@ def create_database():
         con.close()
 
 # todoテーブルを作成する
+# テーブルにカラムを追加する時は、ここのSQL文を編集する
 def init_db():
     con = connect_db()
     cursor = con.cursor()
@@ -95,6 +96,7 @@ def add_todo(description):
     con = connect_db()
     try:
         cur = con.cursor()
+        # 新規作成時に期限日を追加する場合はこのSQL文を編集する
         cur.execute("INSERT INTO todo (description) VALUES (%s)", (description,))
         con.commit()
     finally:
@@ -106,8 +108,9 @@ def update_todo(todo_id):
     con = connect_db()
     try:
         cur = con.cursor()
+        # todo完了処理のSQL文をここに書く
         cur.execute("""
-            todo完了処理のSQL文をここに書く
+            ここにSQL文
         """, (todo_id,))
         con.commit()
     finally:
@@ -119,7 +122,8 @@ def delete_todo(todo_id):
     con = connect_db()
     try:
         cur = con.cursor()
-        cur.execute("削除処理をここに書く", (todo_id,))
+        # 削除処理のSQL文を書く
+        cur.execute("ここにSQL文", (todo_id,))
         con.commit()
     finally:
         cur.close()
