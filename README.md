@@ -51,7 +51,7 @@ python --version
 
 #### wingetを使用する場合（Windows 10/11）：
 ```bash
-winget install Python.Python.3.11
+winget install --id Python.Python.3.11 --version 3.11.2
 ```
 
 ### 2. Gitのインストール
@@ -83,23 +83,20 @@ winget install Git.Git
    - インストール時にはパスワードの設定を求められますので、忘れないように記録してください。
    - デフォルトのポート(5432)を使用することをお勧めします。
 
-#### または、wingetを使用する場合：
-```bash
-winget install PostgreSQL.PostgreSQL
-```
 
 #### PostgreSQLサービスの起動/停止/状態確認：
 
 ```bash
 # サービスの状態確認
-sc query postgresql
+sc query postgresql-x64-14
 
 # サービスの起動
-net start postgresql
+net start ostgresql-x64-14
 
 # サービスの停止
-net stop postgresql
+net stop ostgresql-x64-14
 ```
+サービスの起動・停止については管理者として実行する必要があります。
 
 #### PostgreSQL接続テスト：
 
