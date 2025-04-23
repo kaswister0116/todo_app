@@ -3,12 +3,13 @@ from psycopg2 import errors
 
 # DBへの接続を開始する
 def connect_db():
-    username = os.getenv("USER")
-    password = os.getenv("PGPASSWORD") #or "あなたのパスワード"
+    username = "postgres"
+    password = "postgres"
     try:
         connection = psycopg2.connect(
             dbname="todo_app",
             user=username,
+            password=password,
             host="localhost"
         )
     except errors.OperationalError:
@@ -23,10 +24,12 @@ def connect_db():
 
 # データベースを作成する
 def create_database():
-    username = os.getenv("USER")
+    username = "postgres"
+    password = "postgres"
     con = psycopg2.connect(
         dbname="postgres",
         user=username,
+        password=password,
         host="localhost"
     )
     con.autocommit = True

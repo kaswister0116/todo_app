@@ -47,18 +47,17 @@ psql -U postgres
 
 ```bash
 # サービスの状態確認
-sc query postgresql-x64-14
+# コマンドプロンプトを管理者権限で起動する必要あり
+sc query postgresql-x64-17
 
 # サービスの起動
-net start pstgresql-x64-14
+net start pstgresql-x64-17
 
 # サービスの停止
-net stop pstgresql-x64-14
+net stop pstgresql-x64-17
 ```
-サービスの起動・停止については管理者として実行する必要があります。
 
 ---
-
 
 ### プロジェクトディレクトリの作成とリポジトリのクローン
 
@@ -93,16 +92,27 @@ source venv/Scripts/activate
 # pipのアップグレード
 # コマンドプロンプト
 pip.exe install --upgrade pip
+
 # GitBash
 pip install --upgrade pip
 
 # ライブラリインストール
+pip install -r requirements.txt
+
+
+# うまくいかない時(psycopg2が入らない)
+pip install --upgrade pip setuptools wheel
+pip install psycopg2-binary
 pip install -r requirements.txt
 ```
 
 ### PostgreSQL接続用の環境変数設定（Windowsのみ）
 
 Windowsでは、PostgreSQL接続用の環境変数を設定する必要があります：
+
+---以下は参考---
+
+---
 
 ```bash
 # コマンドプロンプトの場合
@@ -113,6 +123,7 @@ set PGPASSWORD=あなたのパスワード  # PostgreSQLインストール時に
 # $env:USER = "postgres"
 # $env:PGPASSWORD = "あなたのパスワード"
 ```
+---
 
 ## アプリケーションの実行
 
@@ -135,6 +146,6 @@ python app.py
 仮想環境を終了するには次のコマンドを実行します：
 
 ```bash
-# コマンドプロンプトまたはPowerShellで
+# コマンドプロンプトまたはGitBash/PowerShellで
 deactivate
 ```
