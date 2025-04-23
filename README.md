@@ -51,10 +51,10 @@ psql -U postgres
 sc query postgresql-x64-17
 
 # サービスの起動
-net start pstgresql-x64-17
+net start postgresql-x64-17
 
 # サービスの停止
-net stop pstgresql-x64-17
+net stop postgresql-x64-17
 ```
 
 ---
