@@ -106,25 +106,6 @@ pip install psycopg2-binary
 pip install -r requirements.txt
 ```
 
-### PostgreSQL接続用の環境変数設定（Windowsのみ）
-
-Windowsでは、PostgreSQL接続用の環境変数を設定する必要があります：
-
----以下は参考---
-
----
-
-```bash
-# コマンドプロンプトの場合
-set USER=postgres
-set PGPASSWORD=あなたのパスワード  # PostgreSQLインストール時に設定したパスワード
-
-# または、PowerShellの場合
-# $env:USER = "postgres"
-# $env:PGPASSWORD = "あなたのパスワード"
-```
----
-
 ## アプリケーションの実行
 
 ### 1. サーバーの起動
