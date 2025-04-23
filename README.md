@@ -94,7 +94,7 @@ source venv/Scripts/activate
 pip.exe install --upgrade pip
 
 # GitBash
-pip install --upgrade pip
+python.exe -m pip install --upgrade pip
 
 # ライブラリインストール
 pip install -r requirements.txt
