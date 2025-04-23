@@ -47,13 +47,13 @@ psql -U postgres
 
 ```bash
 # サービスの状態確認
-sc query postgresql-x64-14
+sc query postgresql-x64-17
 
 # サービスの起動
-net start pstgresql-x64-14
+net start postgresql-x64-17
 
 # サービスの停止
-net stop pstgresql-x64-14
+net stop postgresql-x64-17
 ```
 サービスの起動・停止については管理者として実行する必要があります。
 
@@ -98,6 +98,9 @@ pip install --upgrade pip
 
 # ライブラリインストール
 pip install -r requirements.txt
+
+# psycopgがインストールできないとき、以下を実行
+pip install --upgrade pip setuptools wheel
 ```
 
 ### PostgreSQL接続用の環境変数設定（Windowsのみ）
