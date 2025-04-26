@@ -106,7 +106,7 @@ git config --global user.email "your@example.com"
 ```
 上記ような設定を求められるため、コミット情報に表示させたい名前をメールアドレスを入力する。
 
-
+---
 ---以下は参考---
 
 #### PostgreSQL接続テスト：
@@ -117,7 +117,6 @@ psql -U postgres
 ```
 パスワードを入力して接続できれば、PostgreSQLは正常に動作しています。終了するには `\q` と入力してEnterを押します。
 
----
 #### PostgreSQLサービスの起動/停止/状態確認：
 
 ```bash
