@@ -26,7 +26,7 @@
       <p>{{ todo[1] }}</p>
       <input type="hidden" name="todo_id" value="{{ todo[0] }}">
       <div>
-        <button type="submit" formaction="{{ url_for('delete_todo')}}" class="button">完了</button>
+        <button type="submit" formaction="{{ url_for('update_todo')}}" class="button">完了</button>
         <button type="submit" formaction="{{ url_for('delete_todo')}}" class="delete-button">削除</button>
       </div>
     </form>
